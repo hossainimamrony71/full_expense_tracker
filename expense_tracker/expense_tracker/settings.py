@@ -72,11 +72,18 @@ WSGI_APPLICATION = 'expense_tracker.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+        'ENGINE': 'django.db.backends.mysql',
+        'NAME': 'expenseteds2l_expense_tracker',       # Database name from cPanel
+        'USER': 'expenseteds2l_ted_s2l_expense_tracker',      # MySQL username
+        'PASSWORD': 'R0m@nR@ing',  # MySQL password
+        'HOST': '192.250.235.76',  # Your cPanel server's IP
+        'PORT': '3306',           # MySQL default port
+        'OPTIONS': {
+            'init_command': "SET sql_mode='STRICT_TRANS_TABLES'",
+            'init_command': "SET time_zone = '+06:00';",
+        }
     }
 }
-
 
 # Password validation
 # https://docs.djangoproject.com/en/5.1/ref/settings/#auth-password-validators
